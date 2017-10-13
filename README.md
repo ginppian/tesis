@@ -1,4 +1,4 @@
-“Clasificador estadístico para la prevención y auxilio en potenciales casos de feminicidio”.
+"Clasificador estadístico para la prevención y auxilio en potenciales casos de feminicidio".
 =========
 
 ## Resumen
@@ -9,3 +9,8 @@ localizar el paradero del agraviado.
 </p>
 
 
+## Agradecimientos
+
+<p align="justify">
+	Agradezco a mis padres y mi hermana, a mi profesor a Dios y a la Virgen de Guadalupe.
+</p>
