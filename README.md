@@ -1,4 +1,4 @@
-"Clasificador estadístico para la prevención y auxilio en potenciales casos de feminicidio".
+Sistema de rastreo GPS como aplicación correctiva para potenciales casos de feminicidio.
 =========
 
 ## Resumen
@@ -48,4 +48,36 @@ Implementar una aplicación que permita a terceros consultar la información de 
 ## Fuentes
 
 * <a href="https://www.genbetadev.com/cnet/como-calcular-la-distancia-entre-dos-puntos-geograficos-en-c-formula-de-haversine">Ejemplo Haversine 1</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
