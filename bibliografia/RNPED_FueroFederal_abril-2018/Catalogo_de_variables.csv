@@ -1,0 +1,18 @@
+Nombre de la columna,Descripción
+Fecha en que se le vio por última vez,"Día, mes y año cuando se le vio por última vez"
+Nombre(s),Nombre(s) de la persona desaparecida o no localizada.
+Apellido paterno,Apellido paterno de la persona desaparecida o no localizada.
+Apellido materno,Apellido materno de la persona desaparecida o no localizada.
+País en que se le vio por última vez,País en que se le vio por última vez
+Entidad en que se le vio por última vez,Entidad en que se le vio por última vez
+Clave de entidad,Número de identificación de la entidad federativa en donde se le vio por última vez.
+Municipio en que se le vio por última vez,Municipio en que se le vio por última vez
+Clave del municipio,Número de identificación del municipio en donde se le vio por última vez.
+País de nacimiento,País de nacimiento de la persona.
+Nacionalidad,Nacionalidad de la persona.
+Sexo,Hombre o mujer.
+Edad,Años de la persona.
+Tipo de Lugar,"Tipo de lugar en el que sucedió la desaparición (puede ser vía pública, carretera, etc.)"
+Autoridad que recibió la denuncia,Institución pública que recibió la denuncia. En este caso será: Agente del Ministerio Público de la Federación.
+Fecha de la denuncia,"Día, mes y año en el que se realizó la denuncia."
+Entidad donde se recibió la denuncia,Entidad federativa en la que se realizó la denuncia.
