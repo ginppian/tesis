@@ -121,53 +121,14 @@ La implementación de un sistema de localización en tiempo real debido a la sit
 
 Así como su acceso de manera libre y accesible a la población.
 
+## Marco Teórico
+
+
+
 ## Fuentes
 
 
 * <a href="https://www.genbetadev.com/cnet/como-calcular-la-distancia-entre-dos-puntos-geograficos-en-c-formula-de-haversine">Ejemplo Haversine 1</a><br>
-
-
-## Problema que dio origen al proyecto
-
-Feminidas:
-
-http://cedoc.inmujeres.gob.mx/documentos_download/BoletinN7_2017.pdf
-
-Persepción inseguridad:
-http://www.inegi.org.mx/saladeprensa/boletines/2017/envipe/envipe2017_09.pdf
-
-El incremento del número de feminicidios, la desaparición forzada de periodistas, estudiantes y la creciente persepción de inseguridad en México nos motiva a crear sistemas que ayuden a la localización preventiva y a la investigación correctiva sobre la trayectoria y huella diaria de nuestros seres queridos.
-
-## ENVIPE
-
-ENVIPE 2016: http://www.inegi.org.mx/saladeprensa/boletines/2016/especiales/especiales2016_09_04.pdf
-
-El Instituto Nacional de Estadística y Geografía (INEGI) presenta la Encuesta Nacional de Victimización y Percepción de la Seguridad Pública (ENVIPE).
-
-El propósito de esta encuesta es generar información a nivel nacional, por entidad federativa y áreas metropolitanas seleccionadas sobre el fenómeno de la victimización delictiva, así como la percepción social actual respecto de la seguridad pública y el desempeño de las autoridades.
-
-La ENVIPE permite hacer estimaciones estadísticas sobre la victimización que afecta de manera directa a las personas y a los hogares en los delitos de robo total de vehículo; robo parcial de vehículo; robo en casa habitación; robo o asalto en calle o transporte público; robo en forma distinta a las anteriores (como carterismo, allanamientos con robo en patio o cochera, abigeato); fraude; extorsión; amenazas verbales; lesiones y otros delitos distintos a los anteriores (como secuestros y delitos sexuales). 
-
-Delitos como narcotráfico, delincuencia organizada y la trata de personas, entre otros en este tipo de categoría, no son susceptibles de medirse en una encuesta de victimización.
-
-
-## Alerta Amber
-
-## INEGI HOMICIDIOS
-
-http://www.inegi.org.mx/sistemas/olap/proyectos/bd/continuas/mortalidad/defuncioneshom.asp?s=est
-
-<p align="center">
-	<img src="imgs/homicidios.png" width="" height="">
-</p>
-
-
-## Agradecimientos
-
-<p align="justify">
-	Agradezco a mis padres y mi hermana, a mi profesor a Dios y a la Virgen de Guadalupe.
-</p>
-
 
 
 
