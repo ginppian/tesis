@@ -123,7 +123,51 @@ Así como su acceso de manera libre y accesible a la población.
 
 ## Marco Teórico
 
+#### Aplicación Móvil
 
+##### Capa de aplicació
+
+Para entender este concepto hay que definir que es una aplicación.
+
+Podemos entender una aplicación como un programa informático que permite a un usuario relalizar diversos tipos de tareas de manera transparente con capas inferiores en un sistema operativo.
+
+La capa de aplicación se encuentra en la parte superior sobre todas las demás capas de un sistema operativo, permitiendo al usuario realizar tareas sin necesidad de conocer el funcionamiento de capas inferiores.
+	
+Es decir, el hardware, la unidad central de procesamiento, CPU (central processing unit), la memoria y los dispositivos de E/S (entrada/salida), proporciona los recursos básicos de cómputo al sistema. Los programas de aplicación, como son los procesadores de texto, las hojas de cálculo, los compiladores y los exploradores web, definen las formas en que estos recursos se emplean para resolver los problemas informáticos de los usuarios. El sistema operativo controla y coordina el uso del hardware entre los diversos programas de aplicación por parte de los distintos usuarios.
+
+@
+<i>
+Abraham Silberschatz, Peter Baer Galvin, Greg Gagne (2006). 
+FUNDAMENTOS DE SISTEMAS OPERATIVOS, 7º EDICIÓN. [en linea]. 
+Madrid: McGraw-Hill/Interamericana de España, S. A. U. 
+Disponible en: https://rinapilar.files.wordpress.com/2014/02/fundamentos-de-sistemas-operativos-silbertchatz.pdf [2018, 23 de octubre].
+Introducción, pag 
+<i>
+
+En la siguiente imágen podemos observar un abstracto de la arquitectura de UNIX (sistam operativo) y sus diferentes capas.
+
+<p align="center">
+	<img src="imgs/arquitecturaUnix.png" width="" height="">
+</p>
+
+<i>
+
+El sistema operativo se denomina frecuentemente el núcleo del sistema, o simplemente núcleo, para destacar su aislamiento frente a los usuarios y a las aplicaciones. Esta porción de UNIX es lo que se conocerá como UNIX en este libro. Sin embargo, UNIX viene equipado con un conjunto de servicios de usuario e interfaces que se consideran parte del sistema. Estos se puede agrupar en el Shell, otro software de interfaz, y los componentes del compilador C (compilador, ensamblador, cargador). La capa externa está formada por las aplicaciones de usuario y la interfaz de usuario al compilador C.
+</i>
+
+@
+<i>
+WILLIAM STALLINGS (1997). 
+SISTEMAS OPERATIVOS ASPECTOS INTERNOS Y PRINCIPIOS DE DISEÑO, 5º EDICIÓN. [en linea]. 
+Pearson Educación, S.A., Madrid.
+Disponible en:  
+[2018, 23 de octubre].
+2.6 Sistemas Unix Tradicionales, pag92.
+</i>
+
+##### Movilidad y Computo Ubicuo
+
+Una vez definido el concepto de aplicación
 
 ## Fuentes
 
