@@ -125,7 +125,7 @@ Así como su acceso de manera libre y accesible a la población.
 
 #### Aplicación Móvil
 
-##### Capa de aplicació
+##### Capa de aplicación
 
 Para entender este concepto hay que definir que es una aplicación.
 
@@ -141,8 +141,8 @@ Abraham Silberschatz, Peter Baer Galvin, Greg Gagne (2006).
 FUNDAMENTOS DE SISTEMAS OPERATIVOS, 7º EDICIÓN. [en linea]. 
 Madrid: McGraw-Hill/Interamericana de España, S. A. U. 
 Disponible en: https://rinapilar.files.wordpress.com/2014/02/fundamentos-de-sistemas-operativos-silbertchatz.pdf [2018, 23 de octubre].
-Introducción, pag 
-<i>
+Introducción, pag 3.
+</i>
 
 En la siguiente imágen podemos observar un abstracto de la arquitectura de UNIX (sistam operativo) y sus diferentes capas.
 
@@ -151,11 +151,10 @@ En la siguiente imágen podemos observar un abstracto de la arquitectura de UNIX
 </p>
 
 <i>
-
 El sistema operativo se denomina frecuentemente el núcleo del sistema, o simplemente núcleo, para destacar su aislamiento frente a los usuarios y a las aplicaciones. Esta porción de UNIX es lo que se conocerá como UNIX en este libro. Sin embargo, UNIX viene equipado con un conjunto de servicios de usuario e interfaces que se consideran parte del sistema. Estos se puede agrupar en el Shell, otro software de interfaz, y los componentes del compilador C (compilador, ensamblador, cargador). La capa externa está formada por las aplicaciones de usuario y la interfaz de usuario al compilador C.
 </i>
 
-@
+@	
 <i>
 WILLIAM STALLINGS (1997). 
 SISTEMAS OPERATIVOS ASPECTOS INTERNOS Y PRINCIPIOS DE DISEÑO, 5º EDICIÓN. [en linea]. 
@@ -165,9 +164,59 @@ Disponible en:
 2.6 Sistemas Unix Tradicionales, pag92.
 </i>
 
-##### Movilidad y Computo Ubicuo
+#### Computo ubicuo.
 
-Una vez definido el concepto de aplicación
+En 1991 Mark Weiser investigador en la Computer Science Laboratory en Xerox PARC publicaba un articulo llamado "La computadora para el siglo 21".
+
+Para Weiser existen 3 etapas de la computación:
+
+* La era de los Mainframes o estaciones de trabajo.
+
+* La era del computador personal.
+
+* La era del computo ubicuo.
+
+El computo ubicuo según Weiser, constituye la tercera ola de la computación. Básicamente es un entorno tecnológico en donde dispositivos de diferentes tamaños y funcionalidades, pueden conectarse y usarse en conjunto para manejar información, de forma que el hombre opera con mayor facilidad sus actividades del mundo cotidiano. Es decir, usar la tecnología a un nivel tan profundo que desaparezca en nuestro entorno. La tecnología profunda se tejen en el tejido de la vida cotidiana, hasta que sea indistinguible.
+
+La gente vive sus vidas. Por lo tanto, estamos tratando de concebir una nueva forma de pensar acerca de las computadoras en el mundo, una que tenga en cuenta el entorno humano natural y permita que las mismas computadoras se desvanezcan en el fondo del ecosistema. Tal mezcla es una consecuencia fundamental no de la tecnología, sino de la psicología humana. Cuando las personas aprenden algo lo suficientemente bien, dejan de ser conscientes de ello.
+
+La máquina multimedia de hoy, demanda la atención de la pantalla del ordenador, convirtiéndola en un foco de atención en lugar de permitir que se desvanezca en el fondo.
+
+El sentido opuesto del computo ubicuo sería "realidad virtual" debido a que la realidad virtual se centra en un enorme aparato para simular el mundo, en lugar de mejorar de manera invisible el mundo, que ya existe.
+
+Para explicar mejor el concepto de: "se desvance en el medio", podemos utiliza el ejemplo de "motores eléctricos dentro de un carro", están ahí al limpiar el parabrisas, al bloquear o desbloquear las puertas, pero no nos preocupamos de dónde están, sino que interactuamos de manera natural para realizar todas estas acciones. De esta manera el computo ubicuo busca que las computadoras sean invisibles.
+
+Cientos de computadoras en una habitación suena intimidante, pero vendrán a ser invisibles a la conciencia común. La gente simplemente los usará inconscientemente para realizar tareas cotidianas.
+El verdadero poder del concepto emerge de la interacción entre todos los dispositivos.
+
+Hay más información disponible a nuestro alcance durante un paseo por el bosque que en cualquier sistema informático, sin embargo, la gente encuentra Un paseo entre árboles relajante y computadoras frustrantes. Máquinas que se adaptan al entorno humano, en lugar de obligar a los humanos a entrar en los suyos, hará que usar una computadora sea tan refrescante como pasear por el bosque.
+
+#### Movilidad informática.
+
+Basado los conceptos anteriores podemos deducir que la "movilidad" es la segunda era de la computación la era del "computador personal". Dónde a diferencia de los Mainframes o grandes estaciones de trabajo tenemos acceso a computadores portatiles o movibles que podemos llevar de un lado a otro y no necesariamente están fijas en un lugar como los Mainframes en la primera etapa.
+
+La computación móvil admite: computadoras portátiles, teléfonos celulares, los cuadernos de notas computarizados, las calculadoras de bolsillo, etc. Sistema de computación en donde el usuario puede estar en movimiento. Esto consiste en fabricar computadoras suficientemente pequeñas para ser fácilmente transportadas.
+
+En cuanto a la comunicación que las computadoras portables tienen con otros dispositivos/computadoras, el modelo de comunicación más difundido, es el modelo cliente-servidor. Mayormente usado en nuestras redes de area local e Internet.
+
+La arquitectura cliente-servidor es un modelo de diseño de software en el que las tareas se reparten entre los proveedores de recursos o servicios, llamados servidores, y los demandantes, llamados clientes. Un cliente realiza peticiones a el servidor, quien le da respuesta.
+
+Por lo tanto podemos decir que "la movilidad infomática" es todo dispositivo de computo portable que interactúan con información centralizada (servidor) mientas los usuarios se encuentran en diferentes ubicaciones.
+	
+https://es.slideshare.net/briangamarra/computacion-movil-y-ubicua-41951544?next_slideshow=1
+Weiser, M. (1991). The Computer for the Twenty-First Century. Scientific American, 265, 94-110.
+Mark Wiser (September 1991). The Computer for the 21st Century. [en linea] Scientific American [26 Octubre 2018]
+
+https://es.slideshare.net/briangamarra/computacion-movil-y-ubicua-41951544?next_slideshow=1
+
+<i>Weiser, M. (1991). The Computer for the Twenty-First Century. Scientific American, 265, 94-110. 
+
+#### Aplicación Móvil
+
+#### Clasificación de las aplicaciones móviles
+
+
+
 
 ## Fuentes
 
