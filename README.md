@@ -1,4 +1,4 @@
-Sistema de rastreo GPS para localización de personas.
+Aplicación de rastreo para localización de personas.
 =========
 
 ## Resumen
@@ -209,12 +209,65 @@ Mark Wiser (September 1991). The Computer for the 21st Century. [en linea] Scien
 
 https://es.slideshare.net/briangamarra/computacion-movil-y-ubicua-41951544?next_slideshow=1
 
-<i>Weiser, M. (1991). The Computer for the Twenty-First Century. Scientific American, 265, 94-110. 
+<i>Weiser, M. (1991). The Computer for the Twenty-First Century. Scientific American, 265, 94-110.</i>
 
 #### Aplicación Móvil
 
+Una aplicación móvil es una herramienta digital que cumple una tarea especifica y que interactua sobre un sistema homogeneo.
+
+Por ecosistema móvil nos referimos al conjunto de actores necesarios para poder tener los dispositivos móviles y a las aplicaciones para los mismos. En concreto, en el ecosistema móvil se incluyen las operadoras de telecomunicaciones, los fabricantes de hardware y todos los elemen- tos de software que intervienen en la ejecución de la aplicación. 
+
+Tal ecosistema es homogeneo pasa desapersivido a simple vista, sin duda las aplicaciones móviles son el preámbulo de la computación ubicua.
+
+Tal ecosistema es importante, pues la aplicación móvil sería la punta del iceberg, pues en realidad detras de ésta hay varios sistemas que interactuan entre si.
+
+Aun que los lenguajes de programación en los que escribimos estas aplicaciones móviles en su mayoría son de proposito general y nos sirven tanto para back-end como para front-end, la aplicación al ser la punta de la piramide está enfocada en el front-end, en desplegar datos, consumir servicios, y trasmitir esa información a un sistema centralizado pasando a ser una extensión del mismo.
+
 #### Clasificación de las aplicaciones móviles
 
+Las clasificaciones de las apliaciones móviles son ampliamente diversas, todo esto se debe a la fragmentación, podemos encontrar diversos desarrolladores de hardware que soportan diversos desarrolladores de software que a su vez soportan diversos lenguajes de programación (Java, Kotlin, ObjC, Swift, Javascript), con diferentes técnicas de programación, actualmente no hay una organización que estandarice y homologue la fragmentación para fácilitar el desarrollo de las aplicaciones.
+
+A continuación se presentan casos de fragmentación:
+
+1. Hardware
+
+* Tamaño
+* Capacidad
+* Sensores
+* Procesamiento
+
+Smart TV, Smartphone, Relojes, etc.
+
+2. Software
+
+* Plataforma de SO (iOS, Android)
+* Versiones de una plataforma (Android 3, Android 5, etc) 
+
+3. Desarrollo
+
+* Lenguaje (Java o Kotlin, Objective-C o Swift)
+* Versión del lenguaje (Swift 3, Swift 4)
+* Librerias (Públicas, Privadas, Propias)
+
+3. Comunicación 
+
+* Estáticas
+* Dinámicas
+
+Las primeras no tienen comunicación externa y no cambian, las segundas tienen acceso a red y consumen servicios dependiendo de reglas de negocio y el consumo de estos servicios su desplegue de datos e interacción con el usuario varia.
+
+Existen otras clasificaciones que escapan al uso de la ingeniería de sistemas como:
+
+Precio, contexto social, etc.
+
+<i>
+
+http://openaccess.uoc.edu/webapps/o2/bitstream/10609/9582/10/Tecnolog%C3%ADa%20y%20desarrollo%20en%20dispositivos%20m%C3%B3viles_M%C3%B3dulo4_M%C3%A9todos%20para%20el%20desarrollo%20de%20aplicaciones%20m%C3%B3viles.pdf
+
+Ramírez Vique Roberto (2011). Métodos para el desarrollo de aplicaciones móviles. FUOC. Fundació per a la Universitat Oberta de Catalunya España, Pag. 10
+</i>
+
+## GPS
 
 
 
@@ -222,7 +275,6 @@ https://es.slideshare.net/briangamarra/computacion-movil-y-ubicua-41951544?next_
 
 
 * <a href="https://www.genbetadev.com/cnet/como-calcular-la-distancia-entre-dos-puntos-geograficos-en-c-formula-de-haversine">Ejemplo Haversine 1</a><br>
-
 
 
 
