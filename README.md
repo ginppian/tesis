@@ -269,10 +269,548 @@ Ramírez Vique Roberto (2011). Métodos para el desarrollo de aplicaciones móvi
 
 ## GPS
 
+## Breve introducción
+
+* Definición.
+
+Sistema Global de Posicionamiento GPS (Global Positioning System).
+
+* Ventajas GPS.
+
+1. Permite conocer la posición con un error inferior a los 100m
+2. A cualquier hora, lugar o condición meteorologica
+3. Permite calcular la velocidad
+4. Rumbo de deslazamiento
+
+* Historia.
+
+El GPS es introducido en 1978 por el departamento de defensa de los Estados Unidos.
+El sistema está financiado, administrado y controlado por US.
+
+* Arquitectura.
+
+Está compuesto por 24 satélites de radionavegación repartidos alrededor de la tierra a unos 20mil km de altura. Éstos emiten información permanente permite a cualquier receptor GPS determinar su posición durante las 24 hrs. Este sistema también cuenta con estaciones terrestres que controlan los satélites.
+
+## Historia
+
+Surge a partir de agrupar el proyecto 621B de la U.S. Air Force (sistema de radionavigación) con el sistema Timation desarrollado por la Naval Research Laboratory que permitiría informaciones horarias muy precisas gracias a satélites con relojes atómicos. Dando surgimiento al Navstar Global Positioning System posterioremente simplificado como GPS cuyo objetivo era reducir la vulnerabilidad de las estaciones terrestres de radionavegación y cubrir toda la tierra, así como situar la velocidad de un móvil y la hora exacta.
+
+El "Sistema de posicionamiento global por satelite" fue introducido en 1978 por el departamento de defensa de los estados unidos
+
+El 28 de junio de 1983 el SPS (Standard Positioning System) se hace accesible a nivel mundial para fines pacificos y civiles. Se establece su presición a 100 metros y una degradación de la presición a voluntad del ejército en caso de necesidad.
+	
+## Composición
+
+Se compone de 3 elementos distintos denominados segmentos.
+
+1. Segmento espacial. Lo componen los satélites.
+2. Segmento de control. Lo componen las estaciones de control.
+3. Segmento del usuario. Lo componenlos receptores GPS.
+
+* Segmento espacial.
+	
+	Está formado por una constelación de 24 satélites llamados SV (Space Vehicle). Circundan la tierra a 20.2000 km de altitud y forman 6 órbitas diferentes con 4 satélites cada una.
+	Cada 24 horas menos 4 minutos a causa del desplazamiento de la tierra al rededor del sol, se presenta exactamente en el mismo lugar y con la misma configuración respecto a los demás satélites.
+	
+	Cada satelite envia un mensaje de navegación indicando su posición orbital así como la hora exacta de la emisión de dicho mensaje.
+	
+* Segmento de control.
+
+	Se conforma por 5 estaciones de vigilacia y monitorización del sistema GPS, distribuidas al rededor del planeta, incluyendo una estación principal que asegura el correcto funcionamiento del sistema calculando las correcciones a aplicar.
+	
+	Las cinco estaciones se encuentran en las islas: Hawaii, Kwajalein (islas Marshall), Ascensión, Diego Garcia, en Colorado Springs. Su misión es captar todas las seáles emitidas por los satélites, acumular los mensajes recibidos y transmitir todas las informaciones recogidas a la estación principal.
+	
+<p align="center">
+	<img src="imgs/gps/estacionControl.png" width="" height="">
+</p>
+	
+* Segmento del usuario.
+
+	Comprende la antena de recepción y el receptor (microprocesador) GPS. Podemos obtener información sobre posición, velocidad, ruta, hora y fecha.
+	
+### Servicio.
+
+El GPS proporciona el PPS (posicionamiento preciso) y el SPS (posicionamiento estándar). El primero está reservado para unso del ejercito USA.
+
+1. PPS: Error 21 mtrs en horizontal, de 27,7 mtrs en vertical y la hora con una precisión de 100 nanosegundos.
+
+2. PSP: Está degradado con propósito de proteger la seguridad USA, la degradación consiste en una pequeá modificación del valor del reloj del satélite con ayuda de un generador pseudoaleatorio. ERROR: inferior a 100 mts en horizontal y 156 mts en vertical, así como la hora con una precisión de 340 nanosegundos.
+
+@	
+<i>
+PAUL CORREIRA (200). 
+GUIA PRÁCTICA DEL GPS, 1º EDICIÓN. [en linea]. 
+Editions Eyrolles , Paris.
+Url: https://books.google.com.mx/books?id=iTW7BBKScHsC&pg=PA5&lpg=PA5&dq=en+1963+la+divisi%C3%B3n+espacial+de+la+u.s+air+force+acuerda+dar&source=bl&ots=k5ABWLkIvF&sig=ACfU3U2zMWLwXMvG3pd6essH6BvJmC0R6w&hl=es&sa=X&ved=2ahUKEwj52bi2vY7hAhUEm-AKHchIB8EQ6AEwAHoECAoQAQ#v=onepage&q=en%201963%20la%20divisi%C3%B3n%20espacial%20de%20la%20u.s%20air%20force%20acuerda%20dar&f=false
+</i>
+
+## Desarrollo
+
+### Instalación Servidor y API
+
+Traccar con MySQL 
+===========
+
+<p align="center">
+	<img src="imgs/traccar.png">
+</p>
+
+## Definición
+
+<p align="justify">
+	Vamos a hacer la instalación de Traccar con una Base de Datos en MySQL.
+</p>
+
+## Requisitos
+
+* Cuenta en <a href="https://m.do.co/c/ccd8a4dcf484">DigitalOcean</a>
+
+## Desarrollo
+
+1. Damos de alta nuestro servidor. 
+
+Si no sabemos cómo hacer lo podemos consultar <a href="https://github.com/ginppian/DigitalOcean-New_Drop_UpWith_Filezilla">aquí</a>.
+
+En mi caso yo elegí:
+
+* Ubuntu 16.04.3 x64
+
+* $10/mo (1GB RAM, 30GB SSD disk, 1 CPU, 2 TB transfer)
+
+* San Francisco, Data Center
+
+* Sin Opciones Adicionales
+
+2. Creamos un nuevo usuario en nuestro VPS (Servidor Virtual Personal)
+
+```
+ssh root@ip
+```
+
+* creamos un nuevo usuario:
+
+```
+adduser ginppian
+```
+
+nos pedirá una *password* y después unos datos personales, estos los podemos dejar vacios y precionar solamente enter.
+
+* cambiamos el modo para que nuestro nuevo usuario tenga permisos de administrador (add Group sudoers):
+
+```
+usermod -aG sudo ginppian
+```
+
+* agregamos la llave *ssh*, esta la podemos obtener de nuestra máquina (cd ~, cd .ssh, cat id_rsa.pub) o desde nuestro VPS:
+
+```
+su ginppian
+cd ~
+mkdir .ssh
+sudo cat /root/.ssh/authorized_keys > ~/.ssh/authorized_keys
+```
+
+nos salimos 
+
+```
+exit
+exit
+```
+
+y volvemos a entrar
+
+```
+ssh ginppian@ip
+```
+
+y ya podremos acceder con nuestro nuevo usuario.
+
+3. Instalamos Apache, MySQL, y PHP
+
+*Consultar Fuente 1*
+
+### Apache
+
+```
+sudo apt-get update
+sudo apt-get install apache2
+```
+
+Agregamos un ServerName
+
+```
+sudo nano /etc/apache2/apache2.conf
+```
+
+Escribimos la siguiente linea al final del archivo y guardamos
+
+```
+ServerName server_domain_or_IP
+```
+
+donde server_domain_or_IP es nuestra ip. Tipeamos el siguiente comando y si nos regresa el mensaje: *Syntax OK* todo va bien.
+
+```
+sudo apache2ctl configtest
+```
+
+Reseteamos Apache para implementar los cambiamos
+
+```
+sudo systemctl restart apache2
+```
+
+**FireWall**
+
+```
+sudo ufw app list
+```
+
+*If you look at the Apache Full profile, it should show that it enables traffic to ports 80 and 443:* podemos verificar que efectivamente están abiertos:
+
+```
+sudo ufw app info "Apache Full"
+```
+
+Permitimos la entrada de traffico a estos puertos:
+
+```
+sudo ufw allow in "Apache Full"
+```
+
+checamos en un navegador:
+
+http://your_server_IP_address
+
+y podemos ver una imágen así:
+
+<p align="center">
+	<img src="imgs/apache_default.png">
+</p>
+
+*If you see this page, then your web server is now correctly installed and accessible through your firewall*
+
+### MySQL
+
+Nos pedirá una contraseña.
+
+```
+sudo apt-get install mysql-server
+```
+
+Instalamos MySQL de forma segura con el siguiente comando: 
+
+```
+mysql_secure_installation
+```
+
+o
+
+```
+sudo mysql_secure_installation
+```
 
 
-## Fuentes
+* Nivel Password
+* Cambiar password para usuario Root
+* Remover usuarios anonimos
+* Desabilitar el login de Root de manera remota
+* Remover Base de Datos de pruebas
+* Refrescar los privilegios de las tablas ahora
 
+Yo en todos le doy *Y* (YES) y la contraseña le dejo la misma. Si le das en una contraseña muy segura, tal vez tengas que cambiar la.
+
+### PHP
+
+```
+sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql
+```
+
+puede que mcrypt este desactualizado. Seguir el siguiente <a href="https://askubuntu.com/questions/1031921/php-mcrypt-package-missing-in-ubuntu-server-18-04-lts">tutorial</a>.
+
+*In most cases, we'll want to modify the way that Apache serves files when a directory is requested. Currently, if a user requests a directory from the server, Apache will first look for a file called index.html. We want to tell our web server to prefer PHP files, so we'll make Apache look for an index.php file first.*
+
+Editamos el siguiente archivo:
+
+```
+sudo nano /etc/apache2/mods-enabled/dir.conf
+```
+
+y veremos algo como:
+
+```
+<IfModule mod_dir.c>
+    DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm
+</IfModule>
+```
+
+permutamos *index.php* al lugar de *index.html*`. De tal manera que nos quede así:
+
+```
+<IfModule mod_dir.c>
+    DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
+</IfModule>
+```
+
+guardamos los cambios.
+
+Reseteamos Apache:
+
+```
+sudo systemctl restart apache2
+```
+
+Verificamos que este en *active (running)* con:
+
+```
+sudo systemctl status apache2
+```
+
+Para instalar módulos adicionales podemos consultar con este comando:
+
+```
+apt-cache search php- | less
+```
+
+para instalar los simplemente con *apt-get install package-name*
+
+### Test PHP Server
+
+```
+sudo nano /var/www/html/info.php
+```
+
+Copiamos y pegamos esto:
+
+```
+<?php
+phpinfo();
+?>
+```
+
+Guardamos los cambios.
+
+Podemos consultar que todo salió bien en la siguiente liga:
+
+http://your_server_IP_address/info.php
+
+Si vemos algo como esta imagen todo SALIO BIEN.
+
+<p align="center">
+	<img src="imgs/php_info.png">
+</p>
+
+4. Instalamos PHPMyAdmin
+
+*Consulte la Fuente 2*
+
+Instalamos *PHPMyAdmin*
+
+```
+sudo apt-get install phpmyadmin apache2-utils
+```
+
+* Cuando nos pregunte dejamos seleccionado *Apache2*.
+
+* Después nos pedirá la contraseña de nuestra Base de Datos.
+
+* Después nos pedirá la contraseña que queremos usar para PHPMyAdmin.
+
+Después que la instalación se ha completado agregamos phpMyAdmin a la configuración de Apache.
+
+Editamos el siguiente archivo:
+
+```
+sudo nano /etc/apache2/apache2.conf
+```
+
+Pegamos lo siguiente al final del archivo:
+
+```
+Include /etc/phpmyadmin/apache.conf
+```
+
+Reseteamos Apache
+
+```
+sudo service apache2 restart
+```
+
+Ahora podemos provar que efectivamente funciona
+
+Entrando a la liga:
+
+
+```
+http://my_ip_sever/phpmyadmin
+```
+
+User: root
+Pass: ****
+
+
+5. Instalamos Java
+
+Para más información podemos consultar un tutorial anterior <a href="https://github.com/ginppian/Traccar2.0">aquí</a>
+
+```
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+sudo apt-get install oracle-java8-set-default
+```
+
+6. Instalamos Traccar
+
+Para consultar todas las versiones de Traccar <a href="https://github.com/tananaev/traccar/releases">aquí</a>
+
+Modificamos la hora:
+
+```
+sudo timedatectl set-timezone America/Mexico_City
+```
+
+sino sabemos nuestra hora podemos consultar tipeando: *timedatectl list-timezones*
+
+```
+cd /opt
+sudo wget "https://github.com/tananaev/traccar/releases/download/v3.13/traccar-linux-3.13.zip"
+sudo apt-get install unzip
+sudo unzip traccar-linux-3.13.zip
+sudo chmod +x traccar.run
+sudo ./traccar.run
+```
+
+Si queremos modificarle la cantidad máxima de memoria a usar podemos modificar este archivo:
+
+```
+sudo nano /opt/traccar/conf/wrapper.conf
+```
+
+y agregamos la siguiente linea, podemos modificar *80* por el pocentaje que quiéramos:
+
+```
+wrapper.java.maxmemory.percent=80
+```
+
+Empezamos Traccar:
+
+```
+sudo /opt/traccar/bin/startDaemon.sh
+```
+
+Comprobamos que se ejecuta correctamente en:
+
+http://ip:8082
+
+### MySQL en Traccar
+
+*Consultar la fuente 3*
+
+Detenemos Traccar:
+
+```
+sudo /opt/traccar/bin/stopDaemon.sh
+```
+
+abrimos *phpMyAdmin* y nos logueamos para crear una nueva Base de Datos:
+
+
+```
+> sudo mysql -u root
+> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '*****_mi_nueva_pass_*****';
+```
+
+* Nueva
+* Ponemos nombre a la Base de Datos
+* En mi caso uso utf8_spanish_ci como cotejamiento
+
+movemos y editamos el archivo de configuración:
+
+```
+cd /opt/traccar/conf/
+sudo nano traccar.xml
+```
+
+borramos estas lineas:
+
+```
+<entry key='database.driver'>org.h2.Driver</entry>
+<entry key='database.url'>jdbc:h2:/home/user/Documents/traccar/target/database</entry>
+<entry key='database.user'>sa</entry>
+<entry key='database.password'></entry>
+```
+
+pegamos estas en el mismo lugar donde estaban las otras:
+
+```
+<entry key='database.driver'>com.mysql.jdbc.Driver</entry> 
+<entry key='database.url'>jdbc:mysql://[HOST]:3306/[DATABASE]?allowMultiQueries=true&amp;autoReconnect=true&amp;useUnicode=yes&amp;characterEncoding=UTF-8&amp;sessionVariables=sql_mode=''</entry>
+<entry key='database.user'>[USER]</entry> 
+<entry key='database.password'>[PASSWORD]</entry>
+```
+
+[HOST]:3306 ponemos localhost
+[DATABASE] ponemos el nombre de la Base de Datos que acabamos de crear
+[USER] ponemos root
+[PASSWORD] ponemos la contraseña de nuestra Base de Datos
+
+reiniciamos
+
+```
+sudo /opt/traccar/bin/startDaemon.sh
+```
+
+### Mapas de Google
+
+Necesitamos entrar a Traccar en modo *admin* como no sabemos la contraseña tenemos que modificarla directamente desde la Base de Datos, podemos:
+
+* Abrimos la consola de mysql
+
+```
+mysql --user=root --password=****
+```
+
+Usamos nuestra Base de Datos:
+
+```
+USE mydatabase;
+```
+
+Cambiamos la contraseña sea cual sea en nuestra tabla *users* para que tenga por *password* como viene cifrada usa un ciframiento *SALT*, este cifrado con este *SALT* corresponden a *password*:
+
+```
+ef38a22ac8e75f7f3a6212dbfe05273365333ef53e34c14c
+000000000000000000000000000000000000000000000000
+```
+
+ejecutamos:
+
+```
+UPDATE users SET hashedpassword='ef38a22ac8e75f7f3a6212dbfe05273365333ef53e34c14c' WHERE id=1;
+UPDATE users SET salt='000000000000000000000000000000000000000000000000' WHERE id=1;
+```
+
+o podemos hacer lo directo desde *PHPMyAdmin*, modificando directamente la tabla *users* dandole en editar.
+
+Ahora accedemos a Tracca como administrador:
+
+```
+User: admin
+Pass: password
+```
+
+* En el ícono de gradiente (arriba a la derecha) o nuestras preferencias damos clic
+* En el cuadro de texto de hasta arriba llamado *Capa de Mapa* seleccionamos *Mapa Personalizado*
+* En el cuadro de texto *Mapa Personalizado* pegamos la siguiente *URL*:
+
+```
+http://mt0.google.com/vt/lyrs=m&hl=en&x={x}&y={y}&z={z}&s=Ga
+```
+
+y refrescamos el navegador. Podemos hacer *log out* e iniciar sesión con otra cuenta.
+
+### Álgoritmo Haversine	
 
 * <a href="https://www.genbetadev.com/cnet/como-calcular-la-distancia-entre-dos-puntos-geograficos-en-c-formula-de-haversine">Ejemplo Haversine 1</a><br>
 
