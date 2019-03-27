@@ -22,6 +22,8 @@
 		3C06790C2244123500F4E479 /* DGEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C06790B2244123500F4E479 /* DGEnvironment.swift */; };
 		3C64261322444DE3006104E0 /* OpcionesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C64261222444DE3006104E0 /* OpcionesViewController.swift */; };
 		3C64261522488178006104E0 /* RutaFechaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C64261422488178006104E0 /* RutaFechaViewController.swift */; };
+		3C6426172249793E006104E0 /* CrudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6426162249793D006104E0 /* CrudViewController.swift */; };
+		3C642619224C317B006104E0 /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C642618224C317B006104E0 /* AddUserViewController.swift */; };
 		DBE267E59075D1A18258F203 /* Pods_Observador.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CDDD64CDF7F546F7D09ED30 /* Pods_Observador.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,8 @@
 		3C06790B2244123500F4E479 /* DGEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGEnvironment.swift; sourceTree = "<group>"; };
 		3C64261222444DE3006104E0 /* OpcionesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpcionesViewController.swift; sourceTree = "<group>"; };
 		3C64261422488178006104E0 /* RutaFechaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RutaFechaViewController.swift; sourceTree = "<group>"; };
+		3C6426162249793D006104E0 /* CrudViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudViewController.swift; sourceTree = "<group>"; };
+		3C642618224C317B006104E0 /* AddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
 		7CDDD64CDF7F546F7D09ED30 /* Pods_Observador.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Observador.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF26259AE8DDC4F5D02C9B2B /* Pods-Observador.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Observador.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Observador/Pods-Observador.debug.xcconfig"; sourceTree = "<group>"; };
 		F94478891A0058E65B3D2456 /* Pods-Observador.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Observador.release.xcconfig"; path = "Pods/Target Support Files/Pods-Observador/Pods-Observador.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,8 +155,10 @@
 			isa = PBXGroup;
 			children = (
 				3C0678E822440EAE00F4E479 /* MainViewController.swift */,
-				3C64261222444DE3006104E0 /* OpcionesViewController.swift */,
 				3C64261422488178006104E0 /* RutaFechaViewController.swift */,
+				3C64261222444DE3006104E0 /* OpcionesViewController.swift */,
+				3C6426162249793D006104E0 /* CrudViewController.swift */,
+				3C642618224C317B006104E0 /* AddUserViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -295,7 +301,9 @@
 				3C64261522488178006104E0 /* RutaFechaViewController.swift in Sources */,
 				3C64261322444DE3006104E0 /* OpcionesViewController.swift in Sources */,
 				3C0679022244100E00F4E479 /* DGRequest.swift in Sources */,
+				3C6426172249793E006104E0 /* CrudViewController.swift in Sources */,
 				3C0678E722440EAE00F4E479 /* AppDelegate.swift in Sources */,
+				3C642619224C317B006104E0 /* AddUserViewController.swift in Sources */,
 				3C06790A2244112A00F4E479 /* ServiceModelView.swift in Sources */,
 				3C0679042244100E00F4E479 /* DGUtilities.swift in Sources */,
 			);

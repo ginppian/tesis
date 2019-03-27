@@ -12,8 +12,22 @@ import UIKit
 class OpcionesViewController: UIViewController {
     
     //var arrOpc = ["Ruta por fecha", "Ruta actual de alguien", "Cambiar persona", "Nueva cuenta"]
-    var arrOpc = ["Ruta por fecha", "Cambiar persona", "Nueva cuenta"]
+    var arrPath = ["Ubicación tiempo real", "Ubicación por fecha"]
+    var arrDate = ["Fecha de ubicación"]
+    var arrCrud = ["CRUD(Lista personas, editar)"]
+    var arrPathSelected = [true, false]
     // ruta actual va en ruta por fecha, como ubicacion en tiempo real
+    
+    enum path: Int {
+        case today = 0
+        case date = 1
+    }
+    enum sec: Int {
+        case path = 0
+        case date = 1
+        case crud = 2
+    }
+    
     let tableView: UITableView = {
         let tb = UITableView()
         tb.translatesAutoresizingMaskIntoConstraints = false
@@ -26,11 +40,11 @@ class OpcionesViewController: UIViewController {
         return cell
     }()
     
-    enum opc: Int {
-        case rutaFecha = 0
-        case rutaActual = 1
-        case nuevaCuenta = 2
-    }
+    //    enum opc: Int {
+    //        case rutaFecha = 0
+    //        case rutaActual = 1
+    //        case nuevaCuenta = 2
+    //    }
     
     func constrainTableView() {
         self.view.addSubview(self.tableView)
@@ -42,9 +56,21 @@ class OpcionesViewController: UIViewController {
     func styleTableView() {
         //self.tableView.backgroundColor = UIColor.red
     }
+    func addBtnRight() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Aplicar", style: .done, target: self, action: #selector(OpcionesViewController.dismissOptions))
+    }
+    @objc func dismissOptions() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    func configTableView() {
+        //self.tableView.allowsSelection = true
+        //self.tableView.allowsMultipleSelection = false
+    }
     func setupTableView() {
         constrainTableView()
         styleTableView()
+        addBtnRight()
+        configTableView()
     }
     func setupUI() {
         setupTableView()
@@ -59,40 +85,114 @@ class OpcionesViewController: UIViewController {
 }
 
 extension OpcionesViewController: UITableViewDataSource {
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrOpc.count
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
     }
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case sec.path.rawValue:
+            return 2
+        case sec.date.rawValue:
+            return 1
+        case sec.crud.rawValue:
+            return 1
+        default:
+            return 2
+        }
+    }
+    
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //if
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.tableViewCell.reuseIdentifier!, for: indexPath)
-                //as? UITableViewCell {
-            cell.textLabel?.text = arrOpc[indexPath.row]
+        switch indexPath.section {
+        case sec.path.rawValue:
+            switch indexPath.row {
+            case path.today.rawValue:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "OpcionesViewControllerCell", for: indexPath)
+                cell.textLabel?.text = arrPath[indexPath.row]
+                if arrPathSelected[indexPath.row] {
+                    cell.accessoryType = UITableViewCell.AccessoryType.checkmark
+                } else {
+                    cell.accessoryType = UITableViewCell.AccessoryType.none
+                }
+                //cell.accessoryType = UITableViewCell.AccessoryType.checkmark
+                cell.selectionStyle = .none
+                return cell
+            case path.date.rawValue:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "OpcionesViewControllerCell", for: indexPath)
+                cell.textLabel?.text = arrPath[indexPath.row]
+                //cell.accessoryType = UITableViewCell.AccessoryType.detailButton
+                if arrPathSelected[indexPath.row] {
+                    cell.accessoryType = UITableViewCell.AccessoryType.checkmark
+                } else {
+                    cell.accessoryType = UITableViewCell.AccessoryType.none
+                }
+                cell.selectionStyle = .none
+                return cell
+            default:
+                return UITableViewCell()
+            }
+        case sec.date.rawValue:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "OpcionesViewControllerCell", for: indexPath)
+            cell.textLabel?.text = arrDate[indexPath.row]
             cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
-
             return cell
-        //}
-        //return UITableViewCell()
+        case sec.crud.rawValue:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "OpcionesViewControllerCell", for: indexPath)
+            cell.textLabel?.text = arrCrud[indexPath.row]
+            cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+            return cell
+        default:
+            return UITableViewCell()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case sec.path.rawValue:
+            return "Path"
+        case sec.date.rawValue:
+            return "Date"
+        case sec.crud.rawValue:
+            return "Crud"
+        default:
+            return nil
+        }
     }
 }
 extension OpcionesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44.0
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        switch indexPath.row {
-        case opc.rutaFecha.rawValue:
-            print("rutaFecha")
+
+        switch indexPath.section {
+        case sec.path.rawValue:
+            print("Path")
+            switch indexPath.row {
+            case path.today.rawValue:
+                arrPathSelected.removeAll()
+                arrPathSelected = [true, false]
+                tableView.reloadData()
+            case path.date.rawValue:
+                arrPathSelected.removeAll()
+                arrPathSelected = [false, true]
+                tableView.reloadData()
+            default:
+                print("bad index")
+            }
+        case sec.date.rawValue:
+            print("Date")
+            tableView.deselectRow(at: indexPath, animated: true)
             let vc = RutaFechaViewController()
-            //var navigationController = UINavigationController(rootViewController: vc)
-            //self.present(navigationController, animated: true, completion: nil)
             self.navigationController?.pushViewController(vc, animated: true)
-        case opc.rutaActual.rawValue:
-            print("rutaActual")
-        case opc.nuevaCuenta.rawValue:
-            print("nuevaCuenta")
+        case sec.crud.rawValue:
+            print("Crud")
+            tableView.deselectRow(at: indexPath, animated: true)
+            let vc = CrudViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
         default:
-            print("nothing")
+            print("didSelect bad index")
+            tableView.deselectRow(at: indexPath, animated: true)
         }
     }
 }
