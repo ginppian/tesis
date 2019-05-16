@@ -54,6 +54,10 @@
 \usepackage{lipsum}%citas palabras de un personaje en el centro
 \usepackage{clipboard}%citas palabras de un personaje en el centro
 
+%\usepackage{apacite}
+%\usepackage{cite}
+
+
 %% # Datos del documento #
 %% Nota que los acentos se deben escribir: \'a, \'e, \'i, etc.
 %% La letra n con tilde es: \~n.
@@ -107,11 +111,12 @@
 \include{intro}
 \include{objetivos}
 \include{planteamiento}
+\include{marco}
 %\include{capitulo2}
 %\include{capitulo3}
 %\include{conclu}
 
-\appendix
+%\appendix
 %% Cap'itulos incluidos despues del comando \appendix aparecen como ap'endices
 %% de la tesis.
 %\include{apendiceA}
@@ -120,12 +125,21 @@
 
 %% Incluir la bibliograf'ia. Mirar el archivo "biblio.bib" para m'as detales
 %% y un ejemplo.
+
+%\bibliography{biblio}
+%\begin{thebibliography}{X}
+%\bibitem{Baz} \textsc{Bazaraa, M.S., J.J. Jarvis} y \textsc{H.D. Sherali},
+%\textit{Programacion lineal y flujo en redes}, segunda edicion,
+%Limusa, M\'exico, DF, 2004.
+%\bibitem{Dan} \textsc{Dantzig, G.B.} y \textsc{P. Wolfe},
+%<<Decomposition principle for linear programs>>,
+%\textit{Operations Research}, \textbf{8}, pags. 101--111, 1960. \end{thebibliography}
+
+
+ 
+\medskip 
+\bibliographystyle{unsrt}
 \bibliography{biblio}
-\begin{thebibliography}{X}
-\bibitem{Baz} \textsc{Bazaraa, M.S., J.J. Jarvis} y \textsc{H.D. Sherali},
-\textit{Programacion lineal y flujo en redes}, segunda edicion,
-Limusa, M\'exico, DF, 2004.
-\bibitem{Dan} \textsc{Dantzig, G.B.} y \textsc{P. Wolfe},
-<<Decomposition principle for linear programs>>,
-\textit{Operations Research}, \textbf{8}, pags. 101--111, 1960. \end{thebibliography}
+
+
 \end{document}
