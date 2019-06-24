@@ -1,0 +1,63 @@
+ID: db91f72c9f809a40230987518f54026f
+
+Uno de los sensores principales con los que actualmente cuentan los telefonos intligentes es el receptor GPS. El Gps permite determinar la posición las 24 horas del día, en cualquier lugar del globo, bajo cualquier condición climatológica.
+
+A través del GPS podemos obtener: latitud, longitud, altitud del dispositivo. A su vez, a partir de estos datos podemos obtener información diversa, como: la velocidad de desplazamiento, la hora exacta, la distancia del dispositivo a un punto dado, si el dispositivo ha entrado a un area específica, si ha salido de un área en específica, principalmente.
+
+
+## Arquitectura
+
+El sistema completo se compone de 3 elementos distintos denominados segmentos, los cuales son:
+
+1. Segmento espacial: lo componen los satélites.
+2. Segmento de control: lo componen las estaciones de control.
+3. Segmento del usuario: lo componenlos receptores GPS.
+
+* Segmento espacial.
+	
+	Está formado por una constelación de 24 satélites llamados SV (Space Vehicle). Circundan la tierra a 20.2000 km de altitud y forman 6 órbitas diferentes con 4 satélites cada una.
+	Cada 24 horas (menos 4 minutos a causa del desplazamiento de la tierra al rededor del sol), se presenta exactamente en el mismo lugar y con la misma configuración respecto a los demás satélites.
+	
+	Cada satelite envia un mensaje de navegación indicando su posición orbital así como la hora exacta de la emisión de dicho mensaje.
+	
+* Segmento de control.
+
+	Se conforma por 5 estaciones de vigilacia y monit/Users/memo/Developer/tesis/latex/planteamiento.texorización del sistema GPS, distribuidas al rededor del planeta, incluyendo una estación principal que asegura el correcto funcionamiento del sistema calculando las correcciones a aplicar.
+	
+	Las cinco estaciones se encuentran en las islas: Hawaii, Kwajalein (islas Marshall), Ascensión, Diego Garcia, en Colorado Springs. Su misión es captar todas las seáles emitidas por los satélites, acumular los mensajes recibidos y transmitir todas las informaciones recogidas a la estación principal.
+	
+
+* Segmento del usuario.
+
+	Comprende la antena de recepción y el receptor (microprocesador) GPS. Podemos obtener información sobre posición, velocidad, ruta, hora y fecha.
+
+## Servicio.
+
+Existen dos tipos de servicio que brinda el sistema de posicionamiento global, uno público SPS (servicio de posicionamiento estándar) destinado a usuarios civiles en una sola frecuencia. El otro tipo de servicio es privado el PPS (servicio de posicionamiento preciso) este, está reservado para uso exclusivo del ejercito de USA.
+
+El primero (SPS) está degradado con propósito de proteger la seguridad USA, la degradación consiste en una pequeña modificación del valor del reloj del satélite con ayuda de un generador pseudoaleatorio. Con un error inferior a 100 mts en horizontal y 156 mts en vertical, así como la hora con una precisión de 340 nanosegundos. El ejercito de USA puede modificar la degradación en caso de amenaza o un posible caso de guerra.
+
+Por otro lado el PPS cuenta con un error inferior a los 21 mtrs en horizontal, de 27.7 mtrs en vertical y la hora con una precisión de 100 nanosegundos.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

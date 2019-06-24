@@ -1,0 +1,8 @@
+ID: db91f72c9f809a40230987518f54026f
+@book{latham,
+	author: "Lawrence Latham",
+	title: "GPS fácil, Uso del sistema de posicionamiento global",
+	year: "2001"
+	publisher: "Editorial Paidotribo"
+	address: "Consejo de Ciento, 245 bis, 1ro 1ra 08011 Barcelona, España"
+}
