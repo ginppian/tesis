@@ -56,76 +56,56 @@ Las ventajas de un telefono inteligente van más allá de poder acceder a intern
 
 \subsection{GPS}
 
-Uno de los sensores principales con los que actualmente cuentan los telefonos intligentes es el: receptor GPS que se encarga de obtener la ubicación exacta con errores mínimos pudiendonos dar: la latitud, longitud y hasta altitud del dispositivo. Apartir de éstos datos podemos obtener información diversa como: la velocidad de desplazamiento del dispositivo, la hora exacta del dispositivo (en base a su posición), la distancia a un punto dado al dispositivo, si el dispositivo ha entrado a un área en especifica, si ha salido de un área en específica, etc.
+Uno de los sensores principales con los que actualmente cuentan los telefonos intligentes es el receptor GPS. El Gps permite determinar la posición las 24 horas del día, en cualquier lugar del globo, bajo cualquier condición climatológica.\cite{latham}
 
+A través del GPS podemos obtener: latitud, longitud, altitud del dispositivo. A su vez, a partir de estos datos podemos obtener información diversa, como: la velocidad de desplazamiento, la hora exacta, la distancia del dispositivo a un punto dado, si el dispositivo ha entrado a un area específica, si ha salido de un área en específica, principalmente.
 
+\subsubsection{Arquitectura}
 
+El sistema completo se compone de 3 elementos distintos denominados segmentos, los cuales son:
 
- Breve introducción
+\begin{enumerate}
+\item Segmento espacial: lo componen los satélites.
+\item Segmento de control: lo componen las estaciones de control.
+\item Segmento del usuario: lo componenlos receptores GPS.
+\end{enumerate}
+\newpage
 
-* Definición.
-
-Sistema Global de Posicionamiento GPS (Global Positioning System).
-
-* Ventajas GPS.
-
-1. Permite conocer la posición con un error inferior a los 100m
-2. A cualquier hora, lugar o condición meteorologica
-3. Permite calcular la velocidad
-4. Rumbo de deslazamiento
-
-* Historia.
-
-El GPS es introducido en 1978 por el departamento de defensa de los Estados Unidos.
-El sistema está financiado, administrado y controlado por US.
-
-* Arquitectura.
-
-Está compuesto por 24 satélites de radionavegación repartidos alrededor de la tierra a unos 20mil km de altura. Éstos emiten información permanente permite a cualquier receptor GPS determinar su posición durante las 24 hrs. Este sistema también cuenta con estaciones terrestres que controlan los satélites.
-
- Historia
-
-Surge a partir de agrupar el proyecto 621B de la U.S. Air Force (sistema de radionavigación) con el sistema Timation desarrollado por la Naval Research Laboratory que permitiría informaciones horarias muy precisas gracias a satélites con relojes atómicos. Dando surgimiento al Navstar Global Positioning System posterioremente simplificado como GPS cuyo objetivo era reducir la vulnerabilidad de las estaciones terrestres de radionavegación y cubrir toda la tierra, así como situar la velocidad de un móvil y la hora exacta.
-
-El "Sistema de posicionamiento global por satelite" fue introducido en 1978 por el departamento de defensa de los estados unidos
-
-El 28 de junio de 1983 el SPS (Standard Positioning System) se hace accesible a nivel mundial para fines pacificos y civiles. Se establece su presición a 100 metros y una degradación de la presición a voluntad del ejército en caso de necesidad.
-	
- Composición
-
-Se compone de 3 elementos distintos denominados segmentos.
-
-1. Segmento espacial. Lo componen los satélites.
-2. Segmento de control. Lo componen las estaciones de control.
-3. Segmento del usuario. Lo componenlos receptores GPS.
-
-* Segmento espacial.
-	
+\paragraph{Segmento espacial.}
+ 
 	Está formado por una constelación de 24 satélites llamados SV (Space Vehicle). Circundan la tierra a 20.2000 km de altitud y forman 6 órbitas diferentes con 4 satélites cada una.
-	Cada 24 horas menos 4 minutos a causa del desplazamiento de la tierra al rededor del sol, se presenta exactamente en el mismo lugar y con la misma configuración respecto a los demás satélites.
+	Cada 24 horas (menos 4 minutos a causa del desplazamiento de la tierra al rededor del sol), se presenta exactamente en el mismo lugar y con la misma configuración respecto a los demás satélites.
 	
+	\begin{figure}[bp!]
+	\centering
+	\includegraphics[width=3in]{imgs/24satelites}
+	  \caption{La tecnología GPS se basa en un grupo de 24 satélites que emiten señales a la Tierra.}
+\end{figure}
+
 	Cada satelite envia un mensaje de navegación indicando su posición orbital así como la hora exacta de la emisión de dicho mensaje.
 	
-* Segmento de control.
+\paragraph{Segmento de control.}
 
 	Se conforma por 5 estaciones de vigilacia y monitorización del sistema GPS, distribuidas al rededor del planeta, incluyendo una estación principal que asegura el correcto funcionamiento del sistema calculando las correcciones a aplicar.
 	
 	Las cinco estaciones se encuentran en las islas: Hawaii, Kwajalein (islas Marshall), Ascensión, Diego Garcia, en Colorado Springs. Su misión es captar todas las seáles emitidas por los satélites, acumular los mensajes recibidos y transmitir todas las informaciones recogidas a la estación principal.
 	
-%<p align="center">
-%	<img src="imgs/gps/estacionControl.png" width="" height="">
-%</p>
-%	
-* Segmento del usuario.
+\begin{figure}[bp!]
+	\centering
+	\includegraphics[width=5in]{imgs/estacionControl}
+	  \caption{Estaciones de control.}
+\end{figure}
+	
+\paragraph{Segmento del usuario.}
 
 	Comprende la antena de recepción y el receptor (microprocesador) GPS. Podemos obtener información sobre posición, velocidad, ruta, hora y fecha.
-	
- Servicio.
 
-El GPS proporciona el PPS (posicionamiento preciso) y el SPS (posicionamiento estándar). El primero está reservado para unso del ejercito USA.
+\subsubsection{Servicio}
 
-1. PPS: Error 21 mtrs en horizontal, de 27,7 mtrs en vertical y la hora con una precisión de 100 nanosegundos.
+Existen dos tipos de servicio que brinda el sistema de posicionamiento global, uno público SPS (servicio de posicionamiento estándar) destinado a usuarios civiles en una sola frecuencia. El otro tipo de servicio es privado el PPS (servicio de posicionamiento preciso) este, está reservado para uso exclusivo del ejercito de USA.
 
-2. PSP: Está degradado con propósito de proteger la seguridad USA, la degradación consiste en una pequeá modificación del valor del reloj del satélite con ayuda de un generador pseudoaleatorio. ERROR: inferior a 100 mts en horizontal y 156 mts en vertical, así como la hora con una precisión de 340 nanosegundos.
+El primero (SPS) está degradado con propósito de proteger la seguridad USA, la degradación consiste en una pequeña modificación del valor del reloj del satélite con ayuda de un generador pseudoaleatorio. Con un error inferior a 100 mts en horizontal y 156 mts en vertical, así como la hora con una precisión de 340 nanosegundos. El ejercito de USA puede modificar la degradación en caso de amenaza o un posible caso de guerra.
 
- 
+Por otro lado el PPS cuenta con un error inferior a los 21 mtrs en horizontal, de 27.7 mtrs en vertical y la hora con una precisión de 100 nanosegundos.
+
+
