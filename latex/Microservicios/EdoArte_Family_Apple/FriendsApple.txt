@@ -1,10 +1,10 @@
 Sección: Apps rastreo para familia y amigos
 
-Técnico: iOS 12.2
+"Find my friends" es una aplicación propiedad de Apple Inc. Requiere iOS 10.0 o posterior. Es compatible con iPhone, iPad, and iPod touch. Y es compatible con Apple Watch para WatchOS 3 o superior.
 
-Al abrir nuestro iPhone con iOS 12.2 notamos que viene precargada la aplicación "Find my frineds". 
 
-Al abrirla notamos que tenemos que agregar a nuestros amigos o familiares. Los podemos agregar con su dirección de iCloud asociada o haciendo uso de airdrop (un localizado de dispositivos Apple cercanos que funciona a través de bluethoot y la red wifi).
+
+Al abrirla el primer paso es agregar a nuestros amigos o familiares. Los podemos agregar con su dirección de iCloud asociada o haciendo uso de Airdrop (un localizado de dispositivos Apple cercanos que funciona a través de bluethoot y la red wifi).
 
 Posterior a eso queda esperar que nos acepten.
 
